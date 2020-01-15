@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const SassLintPlugin = require('sass-lint-webpack');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -58,6 +59,12 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
+              name(file) { // eslint-disable-line no-unused-vars
+                if (process.env.NODE_ENV === 'development') {
+                  return '[path][name].[ext]';
+                }
+                return '[contenthash].[ext]';
+              },
               outputPath: 'img'
             }
           }
@@ -85,5 +92,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'bundle.css'
     }),
+
+    new SassLintPlugin(),
   ]
 };

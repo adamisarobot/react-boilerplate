@@ -10,12 +10,12 @@ body {
   font-family: $bodyFont;
   font-size: 1.5em;
   margin: 0;
-  color: #333;
+  color: $text;
 }
 
 h1 {
   font-family: $displayFont;
   font-size: 8rem;
-  color: $pink;
+  color: $text;
   margin: 0 0 .5em;
 }
