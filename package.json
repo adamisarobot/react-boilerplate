@@ -4,7 +4,8 @@
   "description": "See the name.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --open --mode development"
+    "start": "webpack-dev-server --hot --open --mode development",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "autoprefixer": "^9.7.3",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "cross-env": "^6.0.3",
     "css-loader": "^3.4.1",
     "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
