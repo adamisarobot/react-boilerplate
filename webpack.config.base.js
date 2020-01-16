@@ -7,12 +7,12 @@ module.exports = {
   devtool: 'inline-source-map',
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'app.bundle.js'
   },
   devServer: {
-    contentBase: './build'
+    contentBase: './dist'
   },
   module: {
     rules: [
@@ -23,7 +23,7 @@ module.exports = {
           { 
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env']
+              presets: ['@babel/preset-env', '@babel/preset-react']
             }
           }, 
           { loader: 'eslint-loader' }
@@ -90,7 +90,7 @@ module.exports = {
     }),
 
     new MiniCssExtractPlugin({
-      filename: 'bundle.css'
+      filename: 'app.bundle.css'
     }),
 
     new SassLintPlugin(),
