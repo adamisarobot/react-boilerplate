@@ -4,3 +4,4 @@ const baseConfig = require('./webpack.config.base');
 module.exports = merge(baseConfig, {
   mode: 'production'
 });
+// Add image optimizations/compression
